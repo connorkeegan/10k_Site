@@ -4,10 +4,12 @@
   "description": "A web application to fetch and download 10K information for any company",
   "main": "dist/server.js",
   "scripts": {
-    "build": "node_modules/.bin/tsc",
+    "build": "tsc",
     "start": "node dist/server.js",
     "dev": "ts-node src/server.ts",
-    "fetch-10k": "ts-node src/fetch10k.ts"
+    "fetch-10k": "ts-node src/fetch10k.ts",
+    "clean": "rm -rf dist",
+    "prebuild": "npm run clean"
   },
   "keywords": ["sec", "10k", "edgar", "typescript", "web", "api"],
   "author": "",
