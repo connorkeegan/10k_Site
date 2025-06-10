@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEC 10-K Fetcher</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>📋 SEC 10-K Fetcher</h1>
+            <p>Search and download 10-K filings for any publicly traded company</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="search-section">
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    id="companyInput" 
+                    placeholder="Enter ticker symbol (AAPL), company name (Apple), or CIK number (320193)"
+                    autocomplete="off"
+                >
+                <button id="searchBtn">🔍 Search</button>
+            </div>
+            
+            <div id="suggestions" class="suggestions hidden"></div>
+        </section>
+
+        <section id="results" class="results-section hidden">
+            <div class="company-info">
+                <h2 id="companyName"></h2>
+                <div class="company-details">
+                    <span id="companyTicker"></span>
+                    <span id="companyCik"></span>
+                </div>
+            </div>
+
+            <div class="filing-info">
+                <h3>📋 Latest 10-K Filing</h3>
+                <div class="filing-details">
+                    <div class="detail-row">
+                        <span class="label">📅 Filing Date:</span>
+                        <span id="filingDate"></span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">📄 Form Type:</span>
+                        <span id="formType"></span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">🔗 Accession Number:</span>
+                        <span id="accessionNumber"></span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">📂 Document:</span>
+                        <span id="primaryDocument"></span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">📊 File Size:</span>
+                        <span id="fileSize"></span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">📈 Report Date:</span>
+                        <span id="reportDate"></span>
+                    </div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button id="downloadBtn" class="download-btn">
+                        📥 Download 10-K Document
+                    </button>
+                    <button id="viewBtn" class="view-btn">
+                        👁️ View on SEC Website
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Fetching 10-K information...</p>
+        </section>
+
+        <section id="error" class="error-section hidden">
+            <div class="error-message">
+                <h3>❌ Error</h3>
+                <p id="errorText"></p>
+                <button id="retryBtn">🔄 Try Again</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Data sourced from SEC EDGAR filings | <a href="https://www.sec.gov/edgar" target="_blank">SEC EDGAR Database</a></p>
+            <p>This tool uses the SEC's official API for public company filings</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

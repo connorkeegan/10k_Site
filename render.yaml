@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: sec-10k-fetcher
+    runtime: node
+    plan: free
+    buildCommand: npm run build
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+    disk:
+      name: sec-data
+      mountPath: /tmp
+      sizeGB: 1 
