@@ -4,10 +4,12 @@
   "description": "A web application to fetch and download 10K information for any company",
   "main": "dist/server.js",
   "scripts": {
+    "preinstall": "echo 'Installing dependencies...'",
     "build": "tsc",
     "start": "node dist/server.js",
     "dev": "ts-node src/server.ts",
-    "fetch-10k": "ts-node src/fetch10k.ts"
+    "fetch-10k": "ts-node src/fetch10k.ts",
+    "postinstall": "echo 'Dependencies installed successfully'"
   },
   "keywords": ["sec", "10k", "edgar", "typescript", "web", "api"],
   "author": "",
@@ -24,6 +26,7 @@
     "typescript": "^5.0.0"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
   }
 } 
