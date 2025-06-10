@@ -3,7 +3,7 @@ services:
     name: sec-10k-fetcher
     runtime: node
     plan: free
-    buildCommand: npm ci && npm run build
+    buildCommand: npm run build
     startCommand: npm start
     healthCheckPath: /api/health
     envVars:
